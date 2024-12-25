@@ -1,9 +1,19 @@
-import { Hono } from 'hono'
+import type { Oauth2Controller } from '@/Controllers/v1/discord/Oauth2Controller';
+import { route } from '@/Routers/route';
+import { Hono } from 'hono';
 
-const app = new Hono()
+export type Variables = {
+	Bindings: {
+		DISCORD_ID: string;
+		DISCORD_SECRET: string;
+	};
+	Variables: {
+		Oauth2Controller: Oauth2Controller;
+	};
+};
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const app = new Hono<Variables>();
 
-export default app
+app.route('/', route);
+
+export default app;
