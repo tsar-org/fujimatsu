@@ -1,0 +1,4 @@
+DISCORD_OAUTH_BASE_URL="https://discord.com/api/oauth2"
+DISCORD_ID=""
+DISCORD_SECRET=""
+DISCORD_REDIRECT_URL="http://localhost:8787/v1/discord/oauth2/token"

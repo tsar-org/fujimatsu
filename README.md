@@ -1,7 +1,16 @@
 # fujimatsu
 
-12/21 [とりあえずマイクラサーバーをON、OFFできるものを作る]
+fujimatsu is discord oauth2 api server
 
-・Discordアカウントを使用して管理画面に入れる
+## Framework
 
-参考：https://qiita.com/masayoshi4649/items/46fdb744cb8255f5eb98
+- cloudflare worker
+- hono
+- typescript
+- biome
+- lefthook
+- vitest
+
+## Requirement
+
+- pnpm@9.15

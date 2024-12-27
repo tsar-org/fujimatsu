@@ -1,0 +1,31 @@
+# https://pnpm.io/ja/continuous-integration#github-actions
+name: ci
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9.15.1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+    - run: pnpm install
+    - run: pnpm run check:tsc
+    - run: pnpm run check:biome
+    - run: npx vitest --coverage.enabled true
+    - name: Report vitest coverage
+      uses:  davelosert/vitest-coverage-report-action@v2
