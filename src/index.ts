@@ -1,5 +1,6 @@
 import { route } from '@/Routers/route';
 import { Hono } from 'hono';
+import { logger } from 'hono/logger';
 
 export type Variables = {
 	Bindings: {
@@ -9,6 +10,8 @@ export type Variables = {
 };
 
 const app = new Hono<Variables>();
+
+app.use(logger());
 
 app.route('/', route);
 
