@@ -1,0 +1,29 @@
+name: staging-deploy
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  staging-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: staging-deploy
+    if: contains(github.event.pull_request.labels.*.name, 'staging')
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.1
+      - run: pnpm install
+      - name: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          environment: staging
+          packageManager: pnpm
+          secrets: |
+            NODE_ENV
+        env:
+          NODE_ENV: production
