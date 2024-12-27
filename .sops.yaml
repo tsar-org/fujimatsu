@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: .dev.vars.enc
+    age: >-
+      age1hsqq9n3jmjkn86z49vh5ltnty0gpln8zxm6jh39522mhucnsgsesssxuqk
+
+# age owner, display order
+# taiki-kuraishi
