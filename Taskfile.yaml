@@ -1,0 +1,15 @@
+version: "3"
+
+vars:
+  SOPS_ENCRYPT_FILE: .dev.vars.enc
+  AGE_KEY_FILE: age/keys.txt
+
+tasks:
+  copy-secret:
+    aliases: [c]
+    cmds:
+      - export SOPS_AGE_KEY_FILE=$(pwd)/{{.AGE_KEY_FILE}} && sops -d {{.SOPS_ENCRYPT_FILE}} > .dev.vars
+  edit-secret:
+    aliases: [e]
+    cmds:
+      - export SOPS_AGE_KEY_FILE=$(pwd)/{{.AGE_KEY_FILE}} && EDITOR="code --wait" sops {{.SOPS_ENCRYPT_FILE}}
