@@ -29,7 +29,7 @@ jobs:
         env:
           NODE_ENV: production
       - id: comment
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
           message: 'Deployment is complete. You can preview the changes at ${{ env.DEPLOYMENT_URL }}'
         env:
