@@ -15,8 +15,8 @@ importers:
         specifier: ^0.37.114
         version: 0.37.114
       hono:
-        specifier: ^4.6.14
-        version: 4.6.14
+        specifier: ^4.6.15
+        version: 4.6.15
       inversify:
         specifier: ^6.2.1
         version: 6.2.1(reflect-metadata@0.2.2)
@@ -32,16 +32,16 @@ importers:
         version: 1.9.4
       '@cloudflare/vitest-pool-workers':
         specifier: ^0.5.40
-        version: 0.5.40(@cloudflare/workers-types@4.20241218.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))
+        version: 0.5.40(@cloudflare/workers-types@4.20241224.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))
       '@cloudflare/workers-types':
-        specifier: ^4.20241218.0
-        version: 4.20241218.0
+        specifier: ^4.20241224.0
+        version: 4.20241224.0
       '@types/inversify':
         specifier: ^2.0.33
         version: 2.0.33(reflect-metadata@0.2.2)
       lefthook:
-        specifier: ^1.10.0
-        version: 1.10.0
+        specifier: ^1.10.1
+        version: 1.10.1
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -53,7 +53,7 @@ importers:
         version: 2.1.8(@types/node@22.10.2)
       wrangler:
         specifier: ^3.96.0
-        version: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+        version: 3.99.0(@cloudflare/workers-types@4.20241224.0)
 
 packages:
 
@@ -63,6 +63,7 @@ packages:
 
   '@arkweid/lefthook@0.7.7':
     resolution: {integrity: sha512-Eq30OXKmjxIAIsTtbX2fcF3SNZIXS8yry1u8yty7PQFYRctx04rVlhOJCEB2UmfTh8T2vrOMC9IHHUvvo5zbaQ==}
+    cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     deprecated: '@arkweid/lefthook has been renamed to @evilmartians/lefthook, please upgrade to it. You also can use @evilmartians/lefthook-installer'
     hasBin: true
@@ -224,8 +225,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20241218.0':
-    resolution: {integrity: sha512-Y0brjmJHcAZBXOPI7lU5hbiXglQWniA1kQjot2ata+HFimyjPPcz+4QWBRrmWcMPo0OadR2Vmac7WStDLpvz0w==}
+  '@cloudflare/workers-types@4.20241224.0':
+    resolution: {integrity: sha512-1ZmFc8qqM7S/HUGmLplc4P8n8DoMqiJmc47r9Lr7VbuaotoqCXVljz09w1V1mc4K3pbFPgvqSy4XYStZ08HrlQ==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -909,8 +910,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.6.14:
-    resolution: {integrity: sha512-j4VkyUp2xazGJ8eCCLN1Vm/bxdvm/j5ZuU9AIjLu9vapn2M44p9L3Ktr9Vnb2RN2QtcR/wVjZVMlT5k7GJQgPw==}
+  hono@4.6.15:
+    resolution: {integrity: sha512-OiQwvAOAaI2JrABBH69z5rsctHDzFzIKJge0nYXgtzGJ0KftwLWcBXm1upJC23/omNRtnqM0gjRMbtXshPdqhQ==}
     engines: {node: '>=16.9.0'}
 
   html-escaper@2.0.2:
@@ -971,58 +972,58 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  lefthook-darwin-arm64@1.10.0:
-    resolution: {integrity: sha512-UeVe5Jtb4uuN8elqDpw3Uf7HnZ183xrnoc9Wfqzw2Yc/qt1uHWkBQGqSlWe83HkBaMBlwuGF+V5mcycz/Dhd+w==}
+  lefthook-darwin-arm64@1.10.1:
+    resolution: {integrity: sha512-dGi4Oiu2LSve8Xmz7vHWlUbnU5mk6HnhTbC1CnXqaFbb08yNYSYoJBwsalS+LoO4L6I/pqnv32ESCbdIzuhBiQ==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@1.10.0:
-    resolution: {integrity: sha512-o3nbkFcwZueoYgD/fsodtLFicM5FGFgT0lx6Vph3FBbHmneLuYrfipn38Y8C4JdMJsRhkqHAt8E8VTIZ7fhlZA==}
+  lefthook-darwin-x64@1.10.1:
+    resolution: {integrity: sha512-NkEkBZm5jYH4fqbpJweDyJx/+/jWLst0FEHOCU5QZ8xFm+42hTGj4+6kfbjirU1ubvmRY/TeilYDsq1OIr5jZQ==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@1.10.0:
-    resolution: {integrity: sha512-bu0hg5cTCsvPEJUMvGl5QujgyloXfae9c/YkVHgLhkx5jdUR68QfGONoszEQenyWm6wQgVgUSN4MRDud9fro7w==}
+  lefthook-freebsd-arm64@1.10.1:
+    resolution: {integrity: sha512-hX/c4p0+JoCrr55e8zfXC63ReW3Cg4WKzZKP6NA2uNDaKItHlQ4zR3CCOytdVnuPXOa6f93WB9lmRYtIp34dqw==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@1.10.0:
-    resolution: {integrity: sha512-vElX6xKbdKtma91rGvIrtt0TX/1hMIvh1lF2QHHKuouce3GAConget0eEBkhWIWYZg3wXU0/0lIJatZq1daC1g==}
+  lefthook-freebsd-x64@1.10.1:
+    resolution: {integrity: sha512-0suh8/Mx56Rircc/hvr3vU/XKv0E/afD/LkF8lkOPm4besgq6k9HCkpdPgBykP8Q0ve/W3rOlXeBQ7c7oDhX8Q==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@1.10.0:
-    resolution: {integrity: sha512-oLJFRguZTS1L8wpoawRBwawVRcHRSvq7R38qq1n83Pz/Z/2SdocsRjkARNiqSI8B0piZiX+6863H1ycvd4P3Gw==}
+  lefthook-linux-arm64@1.10.1:
+    resolution: {integrity: sha512-zADf8CSkoV7EfpLsy5U22gq0+famMjUEfKy9nacS6zEgPvMxDk5Q/7QpnMWJeeiwkf9XWgQ+GATWuGahA3Id9A==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@1.10.0:
-    resolution: {integrity: sha512-38VUuekwlSRKeMrktmj0FsQ0Bu3Z8XKGK66gnvDR5vUGd0ftZ+SgvgB1GVWHeySDepox0Mvwz1mKIZorT62g5g==}
+  lefthook-linux-x64@1.10.1:
+    resolution: {integrity: sha512-wdPVMZAN6vi3/4rlhzaWjR5N3AZE5+dUd3lSzfP6mmfXVQtwnJ29HFUlje6TAnwZBSOBI8yoMsz38FrhPuayYg==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@1.10.0:
-    resolution: {integrity: sha512-qFCABCaTdOpoh6kaCDuv91y9L7VuZE4V7Q91bcYtxUql/JEO0y0uCoz8fmkTfLogWWuFmp3V2ecuIIday1RBYQ==}
+  lefthook-openbsd-arm64@1.10.1:
+    resolution: {integrity: sha512-PJ0fHvjcgapaWsn+4uhj3ZMRvkV0Ug+BOrRovF+SdXdA7DiBbRzFPTpUWrGoV3lw7uFjY6pJqGqakDqZ0J7J6g==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@1.10.0:
-    resolution: {integrity: sha512-c3ObgVG64bybz6PfHNLhdwzDADKfjX+2bxMC4FVfutU8TYRrkfyeM67tzrqXOm37TwiKI+u0f4hpn26Fe1TNnQ==}
+  lefthook-openbsd-x64@1.10.1:
+    resolution: {integrity: sha512-Bs0hBWHW4s6Dp0qVG4LXv96Vo1NXsM/y6VrWten3pv2oEO18Yw9PmKd6vl4mGI7yA72wq4HNATBagFx460IIEw==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@1.10.0:
-    resolution: {integrity: sha512-m42wiAIQoesl7aCZsLcMQTTnGA08sIB/JjiI892CUFX/bTf2V4sH1arSgmqrA0KKl7PUW4WEDaeqLZSNAPMOGA==}
+  lefthook-windows-arm64@1.10.1:
+    resolution: {integrity: sha512-xoBiiAChVSv1YYVkwkpfEoAbjNuRblrA0tI8GOtPBhkzlfBP3MaD5JfU2SPzID9IfAG/yV5dOlrLVKhacQA66A==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@1.10.0:
-    resolution: {integrity: sha512-PL2vmj30X8i5DEMU5Sg25U0luakP9EFyG0gpMLJ97IyJYRO7Drka0tDOwbBH7RexRY4HP4FELLhkGvwuEQAyLg==}
+  lefthook-windows-x64@1.10.1:
+    resolution: {integrity: sha512-+AwTHtBP8npL604Dd13rnEblWh6a9+sf0lSzoLy22y3jdae4kVENLmYoeZ6bz0Wf6SF18UCjf+byvspQRnnCHg==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@1.10.0:
-    resolution: {integrity: sha512-UumSwQpbI8z4kEj6MfrQ2aNvxAGO/kUHEH009tpEFOSqqsCmEHmzekRReOAZS17k5dit2xThnHRKvAvwbhsvFA==}
+  lefthook@1.10.1:
+    resolution: {integrity: sha512-WLwXd8FxAcZ0KJg0d/u1r2nY7F/i2XJlyxQSKJkFkbuzqggNU876ksHuNAluSbsZ4nNdI+tWbBUu1Th3SPvgcQ==}
     hasBin: true
 
   loupe@3.1.2:
@@ -1556,7 +1557,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/vitest-pool-workers@0.5.40(@cloudflare/workers-types@4.20241218.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))':
+  '@cloudflare/vitest-pool-workers@0.5.40(@cloudflare/workers-types@4.20241224.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))':
     dependencies:
       '@vitest/runner': 2.1.8
       '@vitest/snapshot': 2.1.8
@@ -1567,7 +1568,7 @@ snapshots:
       miniflare: 3.20241218.0
       semver: 7.6.3
       vitest: 2.1.8(@types/node@22.10.2)
-      wrangler: 3.99.0(@cloudflare/workers-types@4.20241218.0)
+      wrangler: 3.99.0(@cloudflare/workers-types@4.20241224.0)
       zod: 3.24.1
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
@@ -1590,7 +1591,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20241218.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20241218.0': {}
+  '@cloudflare/workers-types@4.20241224.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -2132,7 +2133,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.6.14: {}
+  hono@4.6.15: {}
 
   html-escaper@2.0.2: {}
 
@@ -2195,48 +2196,48 @@ snapshots:
 
   json5@2.2.3: {}
 
-  lefthook-darwin-arm64@1.10.0:
+  lefthook-darwin-arm64@1.10.1:
     optional: true
 
-  lefthook-darwin-x64@1.10.0:
+  lefthook-darwin-x64@1.10.1:
     optional: true
 
-  lefthook-freebsd-arm64@1.10.0:
+  lefthook-freebsd-arm64@1.10.1:
     optional: true
 
-  lefthook-freebsd-x64@1.10.0:
+  lefthook-freebsd-x64@1.10.1:
     optional: true
 
-  lefthook-linux-arm64@1.10.0:
+  lefthook-linux-arm64@1.10.1:
     optional: true
 
-  lefthook-linux-x64@1.10.0:
+  lefthook-linux-x64@1.10.1:
     optional: true
 
-  lefthook-openbsd-arm64@1.10.0:
+  lefthook-openbsd-arm64@1.10.1:
     optional: true
 
-  lefthook-openbsd-x64@1.10.0:
+  lefthook-openbsd-x64@1.10.1:
     optional: true
 
-  lefthook-windows-arm64@1.10.0:
+  lefthook-windows-arm64@1.10.1:
     optional: true
 
-  lefthook-windows-x64@1.10.0:
+  lefthook-windows-x64@1.10.1:
     optional: true
 
-  lefthook@1.10.0:
+  lefthook@1.10.1:
     optionalDependencies:
-      lefthook-darwin-arm64: 1.10.0
-      lefthook-darwin-x64: 1.10.0
-      lefthook-freebsd-arm64: 1.10.0
-      lefthook-freebsd-x64: 1.10.0
-      lefthook-linux-arm64: 1.10.0
-      lefthook-linux-x64: 1.10.0
-      lefthook-openbsd-arm64: 1.10.0
-      lefthook-openbsd-x64: 1.10.0
-      lefthook-windows-arm64: 1.10.0
-      lefthook-windows-x64: 1.10.0
+      lefthook-darwin-arm64: 1.10.1
+      lefthook-darwin-x64: 1.10.1
+      lefthook-freebsd-arm64: 1.10.1
+      lefthook-freebsd-x64: 1.10.1
+      lefthook-linux-arm64: 1.10.1
+      lefthook-linux-x64: 1.10.1
+      lefthook-openbsd-arm64: 1.10.1
+      lefthook-openbsd-x64: 1.10.1
+      lefthook-windows-arm64: 1.10.1
+      lefthook-windows-x64: 1.10.1
 
   loupe@3.1.2: {}
 
@@ -2576,7 +2577,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20241218.0
       '@cloudflare/workerd-windows-64': 1.20241218.0
 
-  wrangler@3.99.0(@cloudflare/workers-types@4.20241218.0):
+  wrangler@3.99.0(@cloudflare/workers-types@4.20241224.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
@@ -2596,7 +2597,7 @@ snapshots:
       workerd: 1.20241218.0
       xxhash-wasm: 1.1.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241218.0
+      '@cloudflare/workers-types': 4.20241224.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
