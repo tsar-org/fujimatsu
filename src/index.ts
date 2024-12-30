@@ -1,6 +1,5 @@
 import { route } from '@/Routers/route';
-import { Hono } from 'hono';
-import { logger } from 'hono/logger';
+import { OpenAPIHono } from '@hono/zod-openapi';
 
 export type Variables = {
 	Bindings: {
@@ -9,10 +8,17 @@ export type Variables = {
 	};
 };
 
-const app = new Hono<Variables>();
-
-app.use(logger());
+const app = new OpenAPIHono<Variables>();
 
 app.route('/', route);
+
+// OpenAPI documentation
+app.doc('/docs/api.json', {
+	openapi: '3.1.0',
+	info: {
+		version: '1.0.0',
+		title: 'Fujimatsu API Reference',
+	},
+});
 
 export default app;
