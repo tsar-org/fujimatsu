@@ -3,8 +3,8 @@ import {
 	env,
 	waitOnExecutionContext,
 } from 'cloudflare:test';
+import worker from '@/../src';
 import { describe, expect, it } from 'vitest';
-import worker from '../../../src';
 
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
@@ -15,9 +15,8 @@ describe('test GET /', () => {
 		const ctx = createExecutionContext();
 		const response = await worker.fetch(request, env, ctx);
 		await waitOnExecutionContext(ctx);
-
 		// assert
 		expect(await response.status).toBe(200);
-		expect(await response.text()).toBe('OK');
+		expect(await response.json()).toEqual({ message: 'OK' });
 	});
 });

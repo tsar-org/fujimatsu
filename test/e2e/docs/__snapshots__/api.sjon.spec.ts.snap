@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`test GET /docs/api.json > snapshot test 1`] = `
+{
+  "components": {
+    "parameters": {},
+    "schemas": {},
+  },
+  "info": {
+    "title": "Fujimatsu API Reference",
+    "version": "1.0.0",
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Health check",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "message",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "OK",
+          },
+        },
+      },
+    },
+  },
+}
+`;

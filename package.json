@@ -16,6 +16,8 @@
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
+		"@hono/swagger-ui": "^0.5.0",
+		"@hono/zod-openapi": "^0.18.3",
 		"@vitest/coverage-istanbul": "^2.1.8",
 		"discord-api-types": "^0.37.114",
 		"hono": "^4.6.15",
