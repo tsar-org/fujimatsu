@@ -17,6 +17,7 @@ jobs:
           version: 9.15.1
       - run: pnpm install
       - name: deploy
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
@@ -27,3 +28,10 @@ jobs:
             NODE_ENV
         env:
           NODE_ENV: production
+      - id: comment
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: 'Deployment is complete. You can preview the changes at ${{ env.DEPLOYMENT_URL }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOYMENT_URL: "https://fujimatsu.stg.tsar-bmb.org/"
