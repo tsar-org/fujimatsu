@@ -28,7 +28,7 @@
 		"@cloudflare/vitest-pool-workers": "^0.5.40",
 		"@cloudflare/workers-types": "^4.20241224.0",
 		"@types/inversify": "^2.0.33",
-		"lefthook": "^1.10.0",
+		"lefthook": "^1.10.1",
 		"typescript": "^5.7.2",
 		"vite-tsconfig-paths": "^5.1.4",
 		"vitest": "^2.1.8",
