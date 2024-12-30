@@ -1,0 +1,20 @@
+# https://docs.github.com/ja/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+    pull-request-branch-name:
+      separator: "/"
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  - package-ecosystem: "npm"
+    schedule:
+      interval: "daily"
+    pull-request-branch-name:
+      separator: "/"
+    labels:
+      - "dependencies"
+      - "npm"
