@@ -1,6 +1,5 @@
 import {
 	createExecutionContext,
-	env,
 	waitOnExecutionContext,
 } from 'cloudflare:test';
 import worker from '@/../src';
@@ -13,7 +12,7 @@ describe('test GET /docs/api', () => {
 		// act
 		const request = new IncomingRequest('http://localhost:8787/docs/api');
 		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, env, ctx);
+		const response = await worker.fetch(request, {}, ctx);
 		await waitOnExecutionContext(ctx);
 
 		// assert

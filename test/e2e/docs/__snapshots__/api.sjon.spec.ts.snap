@@ -37,6 +37,37 @@ exports[`test GET /docs/api.json > snapshot test 1`] = `
         },
       },
     },
+    "/v1/discord/oauth2/authorize": {
+      "get": {
+        "description": "Authorize",
+        "responses": {
+          "302": {
+            "description": "Redirect to Discord Login URL",
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "enum": [
+                        "Internal server error",
+                      ],
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "message",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Internal Server Error",
+          },
+        },
+      },
+    },
   },
 }
 `;

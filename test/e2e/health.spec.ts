@@ -1,6 +1,5 @@
 import {
 	createExecutionContext,
-	env,
 	waitOnExecutionContext,
 } from 'cloudflare:test';
 import worker from '@/../src';
@@ -13,8 +12,9 @@ describe('test GET /', () => {
 		// act
 		const request = new IncomingRequest('http://localhost:8787/');
 		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, env, ctx);
+		const response = await worker.fetch(request, {}, ctx);
 		await waitOnExecutionContext(ctx);
+
 		// assert
 		expect(await response.status).toBe(200);
 		expect(await response.json()).toEqual({ message: 'OK' });
