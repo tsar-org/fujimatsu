@@ -20,7 +20,7 @@
 		"@hono/swagger-ui": "^0.5.0",
 		"@hono/zod-openapi": "^0.18.3",
 		"@vitest/coverage-istanbul": "^2.1.8",
-		"discord-api-types": "^0.37.114",
+		"discord-api-types": "^0.37.115",
 		"hono": "^4.6.15",
 		"inversify": "^6.2.1",
 		"reflect-metadata": "^0.2.2"
