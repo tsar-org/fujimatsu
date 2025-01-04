@@ -2,12 +2,9 @@ import {
 	DiscordOauth2Client,
 	type DiscordOauth2ClientInterface,
 } from '@/Clients/DiscordOauth2Client';
-import {
-	DiscordOauth2Controller,
-	type DiscordOauth2ControllerInterface,
-} from '@/Controllers/v1/DiscordOauth2Controller';
 import { DependencyInjectionContainer } from '@/Injectors/container';
 import { DependencyInjectionType } from '@/Injectors/container.type';
+import type { AuthorizeUsecaseInterface } from '@/Usecases/AuthorizeUsecase';
 import type { MiddlewareHandler } from 'hono';
 import { env } from 'hono/adapter';
 
@@ -35,14 +32,10 @@ export const injectDependencies: MiddlewareHandler = async (c, next) => {
 		);
 	});
 
-	DependencyInjectionContainer.rebind<DiscordOauth2ControllerInterface>(
-		DependencyInjectionType.DiscordOauth2Controller,
-	).to(DiscordOauth2Controller);
-
 	c.set(
-		'DiscordOauth2Controller',
-		DependencyInjectionContainer.get<DiscordOauth2ControllerInterface>(
-			DependencyInjectionType.DiscordOauth2Controller,
+		'AuthorizeUsecase',
+		DependencyInjectionContainer.get<AuthorizeUsecaseInterface>(
+			DependencyInjectionType.AuthorizeUsecase,
 		),
 	);
 

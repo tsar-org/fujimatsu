@@ -1,7 +1,7 @@
-import type { Variables } from '@/index';
+import type { ExtendVariables } from '@/index';
 import { OpenAPIHono, createRoute, z } from '@hono/zod-openapi';
 
-export const health = new OpenAPIHono<Variables>();
+export const health = new OpenAPIHono<ExtendVariables>();
 
 const healthRoute = createRoute({
 	path: '/',
