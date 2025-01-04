@@ -4,6 +4,7 @@ import {
 } from 'cloudflare:test';
 import worker from '@/../src';
 import { DiscordOauth2Client } from '@/Clients/DiscordOauth2Client';
+import { mockConsole } from 'test/helpers/mockConsole';
 import { describe, expect, it, vi } from 'vitest';
 
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
@@ -35,6 +36,7 @@ describe('test GET /', () => {
 
 	it('should return 500 if client throws an error', async () => {
 		//mock
+		mockConsole();
 		const mockEnv = {
 			DISCORD_OAUTH_BASE_URL: 'https://discord-oauth-base-url',
 			DISCORD_ID: 'discord-id',

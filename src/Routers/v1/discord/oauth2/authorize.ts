@@ -1,7 +1,7 @@
-import type { Variables } from '@/index';
+import type { ExtendVariables } from '@/index';
 import { OpenAPIHono, createRoute, z } from '@hono/zod-openapi';
 
-export const authorize = new OpenAPIHono<Variables>();
+export const authorize = new OpenAPIHono<ExtendVariables>();
 
 const authorizeRoute = createRoute({
 	path: '/authorize',
@@ -11,6 +11,7 @@ const authorizeRoute = createRoute({
 	responses: {
 		302: {
 			description: 'Redirect to Discord Login URL',
+			content: undefined,
 		},
 		500: {
 			description: 'Internal Server Error',
@@ -25,7 +26,13 @@ const authorizeRoute = createRoute({
 	},
 });
 
-authorize.openapi(authorizeRoute, (c) => {
-	const discordOauth2Controller = c.get('DiscordOauth2Controller');
-	return discordOauth2Controller.authorize(c);
+authorize.openapi(authorizeRoute, async (c) => {
+	const authorizeUsecase = c.get('AuthorizeUsecase');
+	const authorizeUrl = await authorizeUsecase.execute();
+
+	if (authorizeUrl instanceof Error) {
+		return c.json({ message: 'Internal server error' }, 500);
+	}
+
+	return c.redirect(authorizeUrl, 302);
 });
