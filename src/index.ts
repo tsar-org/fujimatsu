@@ -1,17 +1,22 @@
-import type { DiscordOauth2Controller } from '@/Controllers/v1/DiscordOauth2Controller';
 import { route } from '@/Routers/route';
 import { OpenAPIHono } from '@hono/zod-openapi';
+import type { Bindings, Variables } from 'hono/types';
 import { injectDependencies } from './Middlewares/injectDependencies';
+import type { AuthorizeUsecaseInterface } from './Usecases/AuthorizeUsecase';
 
-export type Variables = {
-	Bindings: {
-		DISCORD_ID: string;
-		DISCORD_SECRET: string;
-	};
-	Variables: {
-		DiscordOauth2Controller: DiscordOauth2Controller;
-	};
-};
+interface ExtendedBindings extends Bindings {
+	DISCORD_ID: string;
+	DISCORD_SECRET: string;
+}
+
+interface ExtendedVariables extends Variables {
+	AuthorizeUsecase: AuthorizeUsecaseInterface;
+}
+
+export interface ExtendVariables extends Variables {
+	Bindings: ExtendedBindings;
+	Variables: ExtendedVariables;
+}
 
 const app = new OpenAPIHono<Variables>();
 

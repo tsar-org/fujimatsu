@@ -1,10 +1,10 @@
 import { api } from '@/Routers/docs/api';
 import { health } from '@/Routers/health';
 import { v1 } from '@/Routers/v1';
-import type { Variables } from '@/index';
+import type { ExtendVariables } from '@/index';
 import { OpenAPIHono } from '@hono/zod-openapi';
 
-export const route = new OpenAPIHono<Variables>();
+export const route = new OpenAPIHono<ExtendVariables>();
 
 route.route('/', health);
 route.route('/docs', api);
