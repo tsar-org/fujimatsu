@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@hono/swagger-ui':
         specifier: ^0.5.0
-        version: 0.5.0(hono@4.6.15)
+        version: 0.5.0(hono@4.6.16)
       '@hono/zod-openapi':
         specifier: ^0.18.3
-        version: 0.18.3(hono@4.6.15)(zod@3.24.1)
+        version: 0.18.3(hono@4.6.16)(zod@3.24.1)
       '@vitest/coverage-istanbul':
         specifier: ^2.1.8
         version: 2.1.8(vitest@2.1.8(@types/node@22.10.2))
@@ -21,8 +21,8 @@ importers:
         specifier: ^0.37.115
         version: 0.37.115
       hono:
-        specifier: ^4.6.15
-        version: 4.6.15
+        specifier: ^4.6.16
+        version: 4.6.16
       inversify:
         specifier: ^6.2.1
         version: 6.2.1(reflect-metadata@0.2.2)
@@ -939,8 +939,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.6.15:
-    resolution: {integrity: sha512-OiQwvAOAaI2JrABBH69z5rsctHDzFzIKJge0nYXgtzGJ0KftwLWcBXm1upJC23/omNRtnqM0gjRMbtXshPdqhQ==}
+  hono@4.6.16:
+    resolution: {integrity: sha512-iE6xOPwDYlfnZFwk6BfIMMIH4WZm3pPhz6rc1uJM/OPew0pjG5K6p8WTLaMBY1/szF/T0TaEjprMpwn16BA0NQ==}
     engines: {node: '>=16.9.0'}
 
   html-escaper@2.0.2:
@@ -1786,20 +1786,20 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@hono/swagger-ui@0.5.0(hono@4.6.15)':
+  '@hono/swagger-ui@0.5.0(hono@4.6.16)':
     dependencies:
-      hono: 4.6.15
+      hono: 4.6.16
 
-  '@hono/zod-openapi@0.18.3(hono@4.6.15)(zod@3.24.1)':
+  '@hono/zod-openapi@0.18.3(hono@4.6.16)(zod@3.24.1)':
     dependencies:
       '@asteasolutions/zod-to-openapi': 7.3.0(zod@3.24.1)
-      '@hono/zod-validator': 0.4.2(hono@4.6.15)(zod@3.24.1)
-      hono: 4.6.15
+      '@hono/zod-validator': 0.4.2(hono@4.6.16)(zod@3.24.1)
+      hono: 4.6.16
       zod: 3.24.1
 
-  '@hono/zod-validator@0.4.2(hono@4.6.15)(zod@3.24.1)':
+  '@hono/zod-validator@0.4.2(hono@4.6.16)(zod@3.24.1)':
     dependencies:
-      hono: 4.6.15
+      hono: 4.6.16
       zod: 3.24.1
 
   '@inversifyjs/common@1.4.0': {}
@@ -2191,7 +2191,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.6.15: {}
+  hono@4.6.16: {}
 
   html-escaper@2.0.2: {}
 
