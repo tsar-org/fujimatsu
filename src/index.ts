@@ -1,7 +1,6 @@
 import { injectDependenciesMiddleware } from '@/Middlewares/injectDependenciesMiddleware';
 import { route } from '@/Routers/route';
 import type { AuthorizeUsecaseInterface } from '@/Usecases/AuthorizeUsecase';
-import type { ExchangeCodeForTokenUsecaseInterface } from '@/Usecases/ExchangeCodeForTokenUsecase';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import type { Bindings, Variables } from 'hono/types';
 
@@ -14,7 +13,6 @@ export interface ExtendedBindings extends Bindings {
 
 export interface ExtendedVariables extends Variables {
 	AuthorizeUsecase: AuthorizeUsecaseInterface;
-	ExchangeCodeForTokenUsecase: ExchangeCodeForTokenUsecaseInterface;
 }
 
 export interface ExtendVariables extends Variables {
