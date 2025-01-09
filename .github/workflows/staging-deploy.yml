@@ -11,10 +11,7 @@ jobs:
     if: contains(github.event.pull_request.labels.*.name, 'staging')
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.1
+      - uses: pnpm/action-setup@v4
       - run: pnpm install
       - name: deploy
         id: deploy
