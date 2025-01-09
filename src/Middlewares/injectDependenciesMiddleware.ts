@@ -5,10 +5,14 @@ import {
 import { DependencyInjectionContainer } from '@/Injectors/container';
 import { DependencyInjectionType } from '@/Injectors/container.type';
 import type { AuthorizeUsecaseInterface } from '@/Usecases/AuthorizeUsecase';
+import type { ExchangeCodeForTokenUsecaseInterface } from '@/Usecases/ExchangeCodeForTokenUsecase';
 import type { MiddlewareHandler } from 'hono';
 import { env } from 'hono/adapter';
 
-export const injectDependencies: MiddlewareHandler = async (c, next) => {
+export const injectDependenciesMiddleware: MiddlewareHandler = async (
+	c,
+	next,
+) => {
 	const {
 		DISCORD_OAUTH_BASE_URL,
 		DISCORD_ID,
@@ -36,6 +40,13 @@ export const injectDependencies: MiddlewareHandler = async (c, next) => {
 		'AuthorizeUsecase',
 		DependencyInjectionContainer.get<AuthorizeUsecaseInterface>(
 			DependencyInjectionType.AuthorizeUsecase,
+		),
+	);
+
+	c.set(
+		'ExchangeCodeForTokenUsecase',
+		DependencyInjectionContainer.get<ExchangeCodeForTokenUsecaseInterface>(
+			DependencyInjectionType.ExchangeCodeForTokenUsecase,
 		),
 	);
 
