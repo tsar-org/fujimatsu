@@ -32,7 +32,7 @@
 		"@cloudflare/workers-types": "^4.20241230.0",
 		"@types/inversify": "^2.0.33",
 		"lefthook": "^1.10.1",
-		"typescript": "^5.7.2",
+		"typescript": "^5.7.3",
 		"vite-tsconfig-paths": "^5.1.4",
 		"vitest": "^2.1.8",
 		"wrangler": "^3.100.0"
