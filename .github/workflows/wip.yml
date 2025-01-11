@@ -7,6 +7,7 @@ on:
 jobs:
   wip:
     runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]'
     steps:
       - uses: wip/action@v1.1.1
         env:
