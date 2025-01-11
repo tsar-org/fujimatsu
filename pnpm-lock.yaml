@@ -37,8 +37,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@cloudflare/vitest-pool-workers':
-        specifier: ^0.5.41
-        version: 0.5.41(@cloudflare/workers-types@4.20250109.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))
+        specifier: ^0.6.0
+        version: 0.6.0(@cloudflare/workers-types@4.20250109.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))
       '@cloudflare/workers-types':
         specifier: ^4.20250109.0
         version: 4.20250109.0
@@ -362,8 +362,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@cloudflare/vitest-pool-workers@0.5.41':
-    resolution: {integrity: sha512-J0uYmOKJgyo/az5nV8QHlR6xQ+HHB6S65tOEutkvUPbuPDbFlBPRT+XHJhSTNNvZGeM1t2qZIzxp0WGmXLtNlQ==}
+  '@cloudflare/vitest-pool-workers@0.6.0':
+    resolution: {integrity: sha512-n6oMnFUTB9jJLNHWuDcwSVB4PkdFlnDl3xlXqiPs1dlzZ/+XhMDvxlUJhq4I+/5JBkfBYxRB+OO0ZhR40bov/A==}
     peerDependencies:
       '@vitest/runner': 2.0.x - 2.1.x
       '@vitest/snapshot': 2.0.x - 2.1.x
@@ -2519,7 +2519,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/vitest-pool-workers@0.5.41(@cloudflare/workers-types@4.20250109.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))':
+  '@cloudflare/vitest-pool-workers@0.6.0(@cloudflare/workers-types@4.20250109.0)(@vitest/runner@2.1.8)(@vitest/snapshot@2.1.8)(vitest@2.1.8(@types/node@22.10.2))':
     dependencies:
       '@vitest/runner': 2.1.8
       '@vitest/snapshot': 2.1.8
@@ -2527,13 +2527,14 @@ snapshots:
       cjs-module-lexer: 1.4.1
       devalue: 4.3.3
       esbuild: 0.17.19
-      miniflare: 3.20241230.0
+      miniflare: 3.20241230.1
       semver: 7.6.3
       vitest: 2.1.8(@types/node@22.10.2)
-      wrangler: 3.100.0(@cloudflare/workers-types@4.20250109.0)
+      wrangler: 3.101.0(@cloudflare/workers-types@4.20250109.0)
       zod: 3.24.1
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
+      - aws-crt
       - bufferutil
       - supports-color
       - utf-8-validate
