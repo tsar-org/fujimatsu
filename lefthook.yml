@@ -7,3 +7,5 @@ pre-commit:
     tsc:
       glob: '*.{js,ts,jsx,tsx}'
       run: pnpm run check:tsc
+    vitest:
+      run : pnpm vitest run
