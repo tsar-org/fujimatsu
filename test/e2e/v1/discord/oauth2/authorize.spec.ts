@@ -1,14 +1,10 @@
-import {
-	createExecutionContext,
-	waitOnExecutionContext,
-} from 'cloudflare:test';
+import { createExecutionContext } from 'cloudflare:test';
 import worker from '@/../src';
 import { DiscordOauth2Client } from '@/Clients/DiscordOauth2Client';
+import { IncomingRequest } from 'test/helpers/incomingRequest';
 import { mockConsole } from 'test/helpers/mockConsole';
 import { mockEnv } from 'test/helpers/mockEnv';
 import { describe, expect, it, vi } from 'vitest';
-
-const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
 describe('test GET /v1/discord/oauth2/authorize', () => {
 	it('should redirect to discord login URL', async () => {
@@ -21,7 +17,6 @@ describe('test GET /v1/discord/oauth2/authorize', () => {
 			'http://localhost:8787/v1/discord/oauth2/authorize',
 		);
 		const response = await worker.fetch(request, env, ctx);
-		await waitOnExecutionContext(ctx);
 
 		// assert
 		expect(await response.status).toBe(302);
@@ -47,7 +42,6 @@ describe('test GET /v1/discord/oauth2/authorize', () => {
 			'http://localhost:8787/v1/discord/oauth2/authorize',
 		);
 		const response = await worker.fetch(request, env, ctx);
-		await waitOnExecutionContext(ctx);
 
 		// assert
 		expect(await response.status).toBe(500);

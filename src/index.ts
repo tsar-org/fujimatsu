@@ -1,22 +1,20 @@
 import { injectDependenciesMiddleware } from '@/Middlewares/injectDependenciesMiddleware';
+import {
+	type EnvType,
+	validateEnvMiddleware,
+} from '@/Middlewares/validateEnvMiddleware';
 import { route } from '@/Routers/route';
 import type { AuthorizeUsecaseInterface } from '@/Usecases/AuthorizeUsecase';
 import { OpenAPIHono } from '@hono/zod-openapi';
-import type { Bindings, Variables } from 'hono/types';
-
-export interface ExtendedBindings extends Bindings {
-	DISCORD_OAUTH_BASE_URL: string;
-	DISCORD_ID: string;
-	DISCORD_SECRET: string;
-	DISCORD_REDIRECT_URL: string;
-}
+import type { Variables } from 'hono/types';
 
 export interface ExtendedVariables extends Variables {
+	safeEnv: EnvType;
 	AuthorizeUsecase: AuthorizeUsecaseInterface;
 }
 
 export interface ExtendVariables extends Variables {
-	Bindings: ExtendedBindings;
+	Bindings: EnvType;
 	Variables: ExtendedVariables;
 }
 
@@ -24,6 +22,7 @@ const app = new OpenAPIHono<Variables>();
 
 // middleware
 app.use(injectDependenciesMiddleware);
+app.use(validateEnvMiddleware);
 
 // route
 app.route('/', route);
