@@ -58,8 +58,8 @@ importers:
         specifier: ^2.1.8
         version: 2.1.8(@types/node@22.10.2)
       wrangler:
-        specifier: ^3.100.0
-        version: 3.100.0(@cloudflare/workers-types@4.20250109.0)
+        specifier: ^3.101.0
+        version: 3.101.0(@cloudflare/workers-types@4.20250109.0)
 
 packages:
 
