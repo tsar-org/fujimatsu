@@ -29,7 +29,7 @@
 		"@arkweid/lefthook": "^0.7.7",
 		"@biomejs/biome": "1.9.4",
 		"@cloudflare/vitest-pool-workers": "^0.5.41",
-		"@cloudflare/workers-types": "^4.20241230.0",
+		"@cloudflare/workers-types": "^4.20250109.0",
 		"@types/inversify": "^2.0.33",
 		"lefthook": "^1.10.1",
 		"typescript": "^5.7.3",
