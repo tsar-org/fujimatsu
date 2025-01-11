@@ -4,31 +4,25 @@ import {
 } from '@/Clients/DiscordOauth2Client';
 import { DependencyInjectionContainer } from '@/Injectors/container';
 import { DependencyInjectionType } from '@/Injectors/container.type';
+import type { EnvType } from '@/Middlewares/validateEnvMiddleware';
 import type { AuthorizeUsecaseInterface } from '@/Usecases/AuthorizeUsecase';
 import type { MiddlewareHandler } from 'hono';
 import { env } from 'hono/adapter';
 
-export const injectDependencies: MiddlewareHandler = async (c, next) => {
-	const {
-		DISCORD_OAUTH_BASE_URL,
-		DISCORD_ID,
-		DISCORD_SECRET,
-		DISCORD_REDIRECT_URL,
-	} = env<{
-		DISCORD_OAUTH_BASE_URL: string;
-		DISCORD_ID: string;
-		DISCORD_SECRET: string;
-		DISCORD_REDIRECT_URL: string;
-	}>(c);
+export const injectDependenciesMiddleware: MiddlewareHandler = async (
+	c,
+	next,
+) => {
+	const envVars: EnvType = env<Record<string, unknown> & EnvType>(c);
 
 	DependencyInjectionContainer.rebind<DiscordOauth2ClientInterface>(
 		DependencyInjectionType.DiscordOauth2Client,
 	).toDynamicValue(() => {
 		return new DiscordOauth2Client(
-			DISCORD_OAUTH_BASE_URL,
-			DISCORD_ID,
-			DISCORD_SECRET,
-			DISCORD_REDIRECT_URL,
+			envVars.DISCORD_OAUTH_BASE_URL,
+			envVars.DISCORD_ID,
+			envVars.DISCORD_SECRET,
+			envVars.DISCORD_REDIRECT_URL,
 		);
 	});
 

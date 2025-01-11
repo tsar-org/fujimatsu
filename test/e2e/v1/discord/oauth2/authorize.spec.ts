@@ -1,48 +1,35 @@
-import {
-	createExecutionContext,
-	waitOnExecutionContext,
-} from 'cloudflare:test';
+import { createExecutionContext } from 'cloudflare:test';
 import worker from '@/../src';
 import { DiscordOauth2Client } from '@/Clients/DiscordOauth2Client';
+import { IncomingRequest } from 'test/helpers/incomingRequest';
 import { mockConsole } from 'test/helpers/mockConsole';
+import { mockEnv } from 'test/helpers/mockEnv';
 import { describe, expect, it, vi } from 'vitest';
 
-const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
-
-describe('test GET /', () => {
+describe('test GET /v1/discord/oauth2/authorize', () => {
 	it('should redirect to discord login URL', async () => {
-		//mock
-		const mockEnv = {
-			DISCORD_OAUTH_BASE_URL: 'https://discord-oauth-base-url',
-			DISCORD_ID: 'discord-id',
-			DISCORD_SECRET: 'discord-secret',
-			DISCORD_REDIRECT_URL: 'https://discord-redirect-url',
-		};
+		// arrange
+		const env = mockEnv();
+		const ctx = createExecutionContext();
 
 		// act
 		const request = new IncomingRequest(
 			'http://localhost:8787/v1/discord/oauth2/authorize',
 		);
-		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, mockEnv, ctx);
-		await waitOnExecutionContext(ctx);
+		const response = await worker.fetch(request, env, ctx);
 
 		// assert
 		expect(await response.status).toBe(302);
 		expect(await response.headers.get('Location')).toBe(
-			`${mockEnv.DISCORD_OAUTH_BASE_URL}/authorize?client_id=${mockEnv.DISCORD_ID}&redirect_uri=${encodeURIComponent(mockEnv.DISCORD_REDIRECT_URL)}&response_type=code&scope=identify`,
+			`${env.DISCORD_OAUTH_BASE_URL}/authorize?client_id=${env.DISCORD_ID}&redirect_uri=${encodeURIComponent(env.DISCORD_REDIRECT_URL)}&response_type=code&scope=identify`,
 		);
 	});
 
 	it('should return 500 if client throws an error', async () => {
-		//mock
+		// arrange
+		const env = mockEnv();
+		const ctx = createExecutionContext();
 		mockConsole();
-		const mockEnv = {
-			DISCORD_OAUTH_BASE_URL: 'https://discord-oauth-base-url',
-			DISCORD_ID: 'discord-id',
-			DISCORD_SECRET: 'discord-secret',
-			DISCORD_REDIRECT_URL: 'https://discord-redirect-url',
-		};
 		vi.spyOn(
 			DiscordOauth2Client.prototype,
 			'generateAuthorizeUrl',
@@ -54,9 +41,7 @@ describe('test GET /', () => {
 		const request = new IncomingRequest(
 			'http://localhost:8787/v1/discord/oauth2/authorize',
 		);
-		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, mockEnv, ctx);
-		await waitOnExecutionContext(ctx);
+		const response = await worker.fetch(request, env, ctx);
 
 		// assert
 		expect(await response.status).toBe(500);

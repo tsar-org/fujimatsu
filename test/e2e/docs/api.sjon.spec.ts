@@ -1,19 +1,18 @@
-import {
-	createExecutionContext,
-	waitOnExecutionContext,
-} from 'cloudflare:test';
+import { createExecutionContext } from 'cloudflare:test';
 import worker from '@/../src';
+import { IncomingRequest } from 'test/helpers/incomingRequest';
+import { mockEnv } from 'test/helpers/mockEnv';
 import { describe, expect, it } from 'vitest';
-
-const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
 describe('test GET /docs/api.json', () => {
 	it('snapshot test', async () => {
-		// act
+		// arrange
 		const request = new IncomingRequest('http://localhost:8787/docs/api.json');
+		const env = mockEnv();
 		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, {}, ctx);
-		await waitOnExecutionContext(ctx);
+
+		// act
+		const response = await worker.fetch(request, env, ctx);
 
 		// assert
 		expect(await response.status).toBe(200);
