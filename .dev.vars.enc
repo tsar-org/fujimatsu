@@ -1,20 +1,14 @@
-{
-	"data": "ENC[AES256_GCM,data:g0cVGyJ0dKzbKyaK8+59yJKnUlAy3SClnNzukYxNztaqpmatCKUz8waQ3Ee1mZYD5DeIjeRoUHhotvB/QswaUENkdWJZnvZ6+siVWTG3CVXC/8Ndczk8QpQzsmfAf7zWgqnPpVkeyivYJbfQjxARJWE9yXLj8NCjRuj1Wia4t5FlgSxJ8UOTZui4hB0trcweAxIBX1aRzYWCAbjhj+XuUDtetE4WmhWxs1OvV+6G+jpB7BVzUxaRf9n8h9B3WYzHTunWJzq8+f7aZrXGSQ9Ffgl+lJB8CykNQcHEOmy7c0oJfLdSVMnLeWnmc4IY89qYYIJP35YAIDTAxySWTmo31xCv5Jr9UE6Zh+ZkDonkmk9R,iv:tAYL1TCNwdhbuuXtb2cnZevyBdVkRkNPA/bPsznJe8w=,tag:0vgH6LdywDk3f3KQ/l2rNA==,type:str]",
-	"sops": {
-		"kms": null,
-		"gcp_kms": null,
-		"azure_kv": null,
-		"hc_vault": null,
-		"age": [
-			{
-				"recipient": "age1hsqq9n3jmjkn86z49vh5ltnty0gpln8zxm6jh39522mhucnsgsesssxuqk",
-				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBZVGR5NENFWTVIUkx1VFRy\nY2ljM2tQcC9vTHV6clpUSjlobTdnVnJyLzBZClgxUnZFaXRFTnpxSFRWcmNzVkNr\nb09LRmJHKzRNUHZBTitRTlE3K1ZpcHMKLS0tIEJocEZZa3FTNXc1T0tOdTdUZHRR\na1ZHR0hkVHJLUXZBRVl4aXVSV1RkRjQKef7pNIPFKh6IOXxUC83D3o11z4yijzVT\nciqCD9o8IJQqS7YgDMm9K5ZJfSkaK5UWoZyuilK/x9T1eW+TMy+YvA==\n-----END AGE ENCRYPTED FILE-----\n"
-			}
-		],
-		"lastmodified": "2024-12-27T13:43:15Z",
-		"mac": "ENC[AES256_GCM,data:7TR8nO2m66OrfiyR5If3cBztn0nPs3/LRlY6BeTxnTaAGrKiBeuj1DUN1gfICbpdtlyh4xI87Ph6++mrXNHwbva/1abl8CMTDtYA0hQu4ImlYW5od2LqFIkdXR7m1cLrlMnNn/nlkruZBw/bgUlmRCvQ/PShp0xwOh6SHYPv5M0=,iv:ZQZVC0uC19Yr8Y9qHI+voVV5dWS0KSXBwIqGaZRqBm0=,tag:OC6EkwyKq/+R9NzYO/AhSQ==,type:str]",
-		"pgp": null,
-		"unencrypted_suffix": "_unencrypted",
-		"version": "3.9.1"
-	}
-}
+#/-------------------[DOTENV_PUBLIC_KEY]--------------------/
+#/            public-key encryption for .env files          /
+#/       [how it works](https://dotenvx.com/encryption)     /
+#/----------------------------------------------------------/
+DOTENV_PUBLIC_KEY_VARS="0390d08e32720e003b8b959a0112116caba03c1bebe4a8ee6ca3114e88178bb3c5"
+
+# .dev.vars
+DISCORD_OAUTH_BASE_URL="encrypted:BJQIt6WLoGn2Czh7S5hvvizBdh4jZNPUWH/fg6nsfZsTDGY+HdTuBKn1RS7Mk6BOICLg6SACr+zKy0g3/6BdKlOfpz4YvhXvviycKn8CJhttU8299JZm9FmXTq8P9f4pvgYGW/ZUvIFZUmG9IUDNBQVjO4qUpH0/coJRvR3/Qw=="
+DISCORD_ID="encrypted:BJnNAY1BnKbQzGk44jldRaONSSDBkKTEXeCPZUGtLfmMnQXbSKF8AF1xNzekiG29jaPfKfVf7kMfANuU/jizF+L90T/NM+GpYAohip9ugmE+NsIVj1Am+fEVthYzObb/XVdD01uJXCAlGO+h7DVkQPOuWzM="
+DISCORD_SECRET="encrypted:BGcZrGrqYwvU1I4DkxGagvRhm39AGVconwVKldLUGZaylj1gjGDEFw4c26B3YJq9TDRWrECh+3I8Qa+NdLbRk914VqAoIRwAmWVJ5+xrwk4X2qLjkbx87uH+NBEq2OQkIRGEP+p5ntj5FGU9TZhmwWzwcxOagbjyYSrGGgh0Ee9U"
+DISCORD_REDIRECT_URL="encrypted:BKINUNO0P3sB+mFMkck8pJLD1E7nzusoHufyqQ7MvgQm4xi+6FG3UEbZLLeGxeYnuzyKW9dmqEEblkFnrJt7N2a4sfQlr1mqyz2fqIopc7P7v3b6lrcRhil13t/ql6NbSYH0cdqKKA0Bvvj5Oxb4aNYTgMeEAyHNmL6AI+v04XhAAYrs1MyF2xfGrzHXNw=="
+
+CLOUDFLARE_API_TOKEN="encrypted:BKV7EUPgwEQMX5dW2jjdKPVWhIZjiR+BR8819Y9xLwu4SD3kwcIeBPShJKGNG9F1Qo0vjIdSMT0WTHONiCwMyrXQB/iUl6jTZAmbNKCcktzojxvguY9cqi3jg5gXYmrPi02HTL1wzedScY9CLxj7px9soKatyQSr5zYofh1TjmDZnDuXD2hOg28="
+
