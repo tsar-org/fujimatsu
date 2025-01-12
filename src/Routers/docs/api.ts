@@ -5,8 +5,8 @@ import { OpenAPIHono } from '@hono/zod-openapi';
 export const api = new OpenAPIHono<ExtendVariables>();
 
 api.get(
-	'/api',
-	swaggerUI({
-		url: '/docs/api.json',
-	}),
+  '/api',
+  swaggerUI({
+    url: '/docs/api.json',
+  }),
 );

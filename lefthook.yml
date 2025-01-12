@@ -7,5 +7,8 @@ pre-commit:
     tsc:
       glob: '*.{js,ts,jsx,tsx}'
       run: pnpm run check:tsc
+    editorconfig-checker:
+      run: pnpm run check:editorconfig
     vitest:
       run : pnpm vitest run
+

@@ -48,6 +48,9 @@ importers:
       '@vitest/coverage-istanbul':
         specifier: ^2.1.8
         version: 2.1.8(vitest@2.1.8(@types/node@22.10.2))
+      editorconfig-checker:
+        specifier: ^6.0.1
+        version: 6.0.1
       lefthook:
         specifier: ^1.10.3
         version: 1.10.3
@@ -1270,6 +1273,11 @@ packages:
   eciesjs@0.4.13:
     resolution: {integrity: sha512-zBdtR4K+wbj10bWPpIOF9DW+eFYQu8miU5ypunh0t4Bvt83ZPlEWgT5Dq/0G6uwEXumZKjfb5BZxYUZQ2Hzn/Q==}
     engines: {bun: '>=1', deno: '>=2', node: '>=16'}
+
+  editorconfig-checker@6.0.1:
+    resolution: {integrity: sha512-9qhGMJNBSDx+V2w7u8eh47AOMFe+9KWG6hzEG3nlB/7SATo0O65jOrqWbcutrToZh2ojtaGlLhQ9kVocWxwsrw==}
+    engines: {node: '>=20.11.0'}
+    hasBin: true
 
   electron-to-chromium@1.5.76:
     resolution: {integrity: sha512-CjVQyG7n7Sr+eBXE86HIulnL5N8xZY1sgmOPGuq/F0Rr0FJq63lg0kEtOIDfZBk44FnDLf6FUJ+dsJcuiUDdDQ==}
@@ -3458,6 +3466,8 @@ snapshots:
       '@noble/ciphers': 1.2.0
       '@noble/curves': 1.8.0
       '@noble/hashes': 1.7.0
+
+  editorconfig-checker@6.0.1: {}
 
   electron-to-chromium@1.5.76: {}
 
