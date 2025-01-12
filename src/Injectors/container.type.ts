@@ -1,7 +1,7 @@
 export const DependencyInjectionType = {
-	// usecases
-	AuthorizeUsecase: Symbol.for('AuthorizeUsecase'),
+  // usecases
+  AuthorizeUsecase: Symbol.for('AuthorizeUsecase'),
 
-	// clients
-	DiscordOauth2Client: Symbol.for('DiscordOauth2Client'),
+  // clients
+  DiscordOauth2Client: Symbol.for('DiscordOauth2Client'),
 };

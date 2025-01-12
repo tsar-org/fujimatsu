@@ -10,7 +10,6 @@ fujimatsu is discord oauth2 api server
 - biome
 - lefthook
 - vitest
-- sops
 - inversify
 
 ## Requirement
