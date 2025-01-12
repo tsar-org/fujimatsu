@@ -35,5 +35,5 @@ lerna-debug.log*
 # vitest coverage
 coverage/
 
-# age
-age/
+# dotenvx
+.env.keys
