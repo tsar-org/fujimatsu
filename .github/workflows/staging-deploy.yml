@@ -12,6 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
+      - name: setup dotenvx keys
+        env:
+          DOTENV_PRIVATE_KEY_VARS: ${{ secrets.DOTENV_PRIVATE_KEY_VARS }}
+        run: |
+          echo DOTENV_PRIVATE_KEY_VARS=${{ env.DOTENV_PRIVATE_KEY_VARS }} >> .env.keys
       - run: pnpm install
       - name: deploy
         id: deploy

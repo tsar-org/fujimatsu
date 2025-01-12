@@ -22,6 +22,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
+    - name: setup dotenvx keys
+      env:
+        DOTENV_PRIVATE_KEY_VARS: ${{ secrets.DOTENV_PRIVATE_KEY_VARS }}
+      run: |
+        echo DOTENV_PRIVATE_KEY_VARS=${{ env.DOTENV_PRIVATE_KEY_VARS }} >> .env.keys
     - run: pnpm install
     - run: pnpm run check:tsc
     - run: pnpm run check:biome
