@@ -40,8 +40,8 @@ importers:
         specifier: 1.32.1
         version: 1.32.1
       '@evilmartians/lefthook':
-        specifier: ^1.10.3
-        version: 1.10.3
+        specifier: ^1.10.7
+        version: 1.10.7
       '@vitest/coverage-istanbul':
         specifier: 2.1.8
         version: 2.1.8(vitest@2.1.8(@types/node@22.10.2))
@@ -692,8 +692,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@evilmartians/lefthook@1.10.3':
-    resolution: {integrity: sha512-xD4AKXh4I6Pyidkl0RW/CblI8pH7Uw9E8JTeYaSXh5EOuZ9M/j72VrwDcGviGLgmbGKuciSnd9Btso8ymHIgeQ==}
+  '@evilmartians/lefthook@1.10.7':
+    resolution: {integrity: sha512-QQLKnBaaOFjl/sdu018AhqCoFI0bQSHRdC/kpCU4sANASwai/QBUzpzorR+xsi0++14/q7Nax04N60YF08fX4w==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -2808,7 +2808,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@evilmartians/lefthook@1.10.3': {}
+  '@evilmartians/lefthook@1.10.7': {}
 
   '@fastify/busboy@2.1.1': {}
 
