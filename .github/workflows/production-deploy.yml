@@ -1,16 +1,18 @@
-name: staging-deploy
+name: production-deploy
 on:
-  pull_request:
-    types: [labeled]
+  push:
+    branches:
+      - main
 
 env:
-  DEPLOYMENT_URL: "https://fujimatsu.stg.tsar-bmb.org/"
+  DEPLOYMENT_URL: "https://fujimatsu.tsar-bmb.org/"
 
 jobs:
-  staging-deploy:
+  production-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    name: staging-deploy
+    name: production-deploy
+
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -43,7 +45,7 @@ jobs:
 
   health-check:
     name: health check
-    needs: staging-deploy
+    needs: production-deploy
     runs-on: ubuntu-latest
     steps:
       - name: Check the deployed service URL
@@ -52,15 +54,3 @@ jobs:
           url: ${{env.DEPLOYMENT_URL}}
           max-attempts: 3
           retry-delay: 10s
-
-  deployment-complete-notification:
-    name: deployment success notification
-    needs: health-check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Notify the deployment success
-        uses: thollander/actions-comment-pull-request@v3
-        with:
-          message: 'Deployment is complete. You can preview the changes at ${{ env.DEPLOYMENT_URL }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
