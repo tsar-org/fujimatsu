@@ -37,8 +37,8 @@ importers:
         specifier: 1.32.1
         version: 1.32.1
       '@evilmartians/lefthook':
-        specifier: ^1.10.3
-        version: 1.10.3
+        specifier: ^1.10.8
+        version: 1.10.8
       '@vitest/coverage-istanbul':
         specifier: 2.1.8
         version: 2.1.8(vitest@2.1.8(@types/node@22.10.2))
@@ -695,8 +695,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@evilmartians/lefthook@1.10.3':
-    resolution: {integrity: sha512-xD4AKXh4I6Pyidkl0RW/CblI8pH7Uw9E8JTeYaSXh5EOuZ9M/j72VrwDcGviGLgmbGKuciSnd9Btso8ymHIgeQ==}
+  '@evilmartians/lefthook@1.10.8':
+    resolution: {integrity: sha512-qN0RJxh5iyPQlRl1vBv2vjq1sCeo0DgmypK6GGCN4tOfA7JvjTgG+fFcY1XJOIwF4MN9R86aD/aZvcI/uWuN0Q==}
+    cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -2159,6 +2160,7 @@ packages:
   wrangler@3.101.0:
     resolution: {integrity: sha512-zKRqL/jjyF54DH8YCCaF4B2x0v9kSdxLpNkxGDltZ17vCBbq9PCchooN25jbmxOTC2LWdB2LVDw7S66zdl7XuQ==}
     engines: {node: '>=16.17.0'}
+    deprecated: Downgrade to 3.99.0
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20241230.0
@@ -3067,7 +3069,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@evilmartians/lefthook@1.10.3': {}
+  '@evilmartians/lefthook@1.10.8': {}
 
   '@fastify/busboy@2.1.1': {}
 
