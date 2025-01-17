@@ -12,6 +12,7 @@
     "check:biome": "biome check .",
     "check:tsc": "tsc --noEmit",
     "check:editorconfig": "editorconfig-checker",
+    "check:knip": "knip",
     "test": "vitest",
     "test:snapshot-update": "vitest --update",
     "test:coverage": "vitest run --coverage",
@@ -21,7 +22,6 @@
   "dependencies": {
     "@hono/swagger-ui": "0.5.0",
     "@hono/zod-openapi": "0.18.3",
-    "discord-api-types": "0.37.115",
     "hono": "4.6.16",
     "inversify": "6.2.1",
     "reflect-metadata": "0.2.2"
@@ -33,7 +33,9 @@
     "@dotenvx/dotenvx": "1.32.1",
     "@evilmartians/lefthook": "^1.10.3",
     "@vitest/coverage-istanbul": "2.1.8",
+    "cloudflare": "^4.0.0",
     "editorconfig-checker": "6.0.1",
+    "knip": "^5.42.2",
     "lefthook": "1.10.3",
     "typescript": "5.7.3",
     "vite-tsconfig-paths": "5.1.4",
