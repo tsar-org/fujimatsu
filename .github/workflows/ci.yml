@@ -30,6 +30,8 @@ jobs:
     - run: pnpm install
     - run: pnpm run check:tsc
     - run: pnpm run check:biome
+    - run: pnpm run check:editorconfig
+    - run: pnpm run check:knip
     - run: npx vitest --coverage.enabled true
     - name: Report vitest coverage
       uses:  davelosert/vitest-coverage-report-action@v2

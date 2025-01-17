@@ -2,13 +2,12 @@ pre-commit:
   parallel: true
   commands:
     biome:
-      glob: '*.{js,ts,jsx,tsx}'
       run: pnpm run check:biome
     tsc:
-      glob: '*.{js,ts,jsx,tsx}'
       run: pnpm run check:tsc
     editorconfig-checker:
       run: pnpm run check:editorconfig
     vitest:
       run : pnpm vitest run
-
+    knip:
+      run: pnpm run check:knip
