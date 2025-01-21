@@ -31,7 +31,7 @@
     "@cloudflare/vitest-pool-workers": "0.6.0",
     "@cloudflare/workers-types": "4.20250109.0",
     "@dotenvx/dotenvx": "1.32.1",
-    "@evilmartians/lefthook": "^1.10.3",
+    "@evilmartians/lefthook": "^1.10.10",
     "@vitest/coverage-istanbul": "2.1.8",
     "cloudflare": "^4.0.0",
     "editorconfig-checker": "6.0.1",
